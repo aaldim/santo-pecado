@@ -153,9 +153,9 @@ export const ProductForm = ({ product, categories }: Props) => {
             {...register("gender", { required: true })}
           >
             <option value="">[Seleccione]</option>
-            <option value="men">Men</option>
-            <option value="women">Women</option>
-            <option value="kid">Kid</option>
+            <option value="men">Santo Pecado</option>
+            <option value="women">Negro Sazón</option>
+            <option value="kid">Barriga Llena</option>
             <option value="unisex">Unisex</option>
           </select>
         </div>

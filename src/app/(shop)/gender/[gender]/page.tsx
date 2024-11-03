@@ -25,9 +25,9 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   }
 
   const labels: Record<string, string> = {
-    kid: "para niños",
-    women: "para mujeres",
-    men: "para hombres",
+    kid: "Barriga Llena",
+    women: "Negro Sazón",
+    men: "Santo Pecado",
     unisex: "para todos",
   };
 
