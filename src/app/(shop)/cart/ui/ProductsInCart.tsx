@@ -5,6 +5,7 @@ import { useCartStore } from "@/store";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { currencyFormat } from '../../../../utils/currencyFormat';
 
 export const ProductsInCart = () => {
   const removeProductFromCart = useCartStore((state) => state.removeProduct);
@@ -43,7 +44,7 @@ export const ProductsInCart = () => {
             >
               {product.size} - {product.title}
             </Link>
-            <p>${product.price}</p>
+            <p>{currencyFormat(product.price)}</p>
             <QuantitySelector
               quantity={ product.quantity }
               onQuantityChanged={(quantity) => updateProductQuantity(product, quantity)}
