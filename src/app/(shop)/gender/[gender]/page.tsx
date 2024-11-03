@@ -25,10 +25,10 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   }
 
   const labels: Record<string, string> = {
-    kid: "Barriga LLena",
-    women: "Negro Sazón",
-    men: "Santo Pecado",
-    unisex: "Todos",
+    kid: "para niños",
+    women: "para mujeres",
+    men: "para hombres",
+    unisex: "para todos",
   };
 
   // if ( id === 'kid' ) {
@@ -38,7 +38,7 @@ export default async function CategoryPage({ params, searchParams }: Props) {
   return (
     <>
       <Title
-        title={`Productos de ${labels[gender]}`}
+        title={`Articulos de ${labels[gender]}`}
         subtitle="Todos los productos"
         classname="mb-2"
       />

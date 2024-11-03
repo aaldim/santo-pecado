@@ -3,13 +3,17 @@
 import { Product } from "@/interfaces"
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
+import { currencyFormat } from '@/utils';
 
 interface Props {
     product: Product;
 }
 
 export const ProductGridItem = ({ product }: Props) => {
+    console.log(product.images[0])
+
+    useEffect(() => {}, [product])
 
     const [displayImage, setdisplayImage] = useState( product.images[0] )
 
@@ -18,7 +22,7 @@ export const ProductGridItem = ({ product }: Props) => {
     <div className="rounded-md overflow-hidden fade-in">
         <Link href={ `/product/${ product.slug }` } >
         <Image 
-            src={`/products/${ displayImage }`}
+            src={product.images[0]}
             alt={ product.title }
             className="w-full object-cover rounded"
             width={ 500 }
@@ -35,7 +39,7 @@ export const ProductGridItem = ({ product }: Props) => {
             href={ `/product/${ product.slug }` }>
                 { product.title }
             </Link>
-            <span className="font-bold">${ product.price }</span>
+            <span className="font-bold">{ currencyFormat(product.price) }</span>
         </div>
     </div>
   )
